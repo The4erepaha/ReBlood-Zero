@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://w224fdumko75"]
+
+[ext_resource type="Script" uid="uid://dyhahospf0nf0" path="res://scripts/test_zone.gd" id="1_i2pjl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wofu5"]
+radius = 87.23531
+
+[sub_resource type="LabelSettings" id="LabelSettings_wofu5"]
+font_color = Color(1, 0.011764706, 0.15686275, 1)
+
+[node name="test_zone" type="Area2D" unique_id=652731839]
+script = ExtResource("1_i2pjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1395902107]
+shape = SubResource("CircleShape2D_wofu5")
+
+[node name="Label" type="Label" parent="." unique_id=1016065174]
+offset_left = -64.0
+offset_top = -59.0
+offset_right = 64.0
+offset_bottom = -36.0
+text = "Press E to action"
+label_settings = SubResource("LabelSettings_wofu5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
